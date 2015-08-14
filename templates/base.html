@@ -1,6 +1,18 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}Flasky{% endblock %}
 {% block navbar %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name(id='my-text-field') }}
+    {{ form.submit() }}
+</form>
+
 <div class="navbar navbar-inverse" role="navigation">
 <div class="container">
 <div class="navbar-header">
